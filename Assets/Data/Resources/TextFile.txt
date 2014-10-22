@@ -1,0 +1,36 @@
+I hope today they let me code
+public void Start()
+StartTheGame();
+public void StartTheGame()
+GetCredits();
+public string GetCredits()
+if Programmer
+return "Zalo"
+if Artist 3d
+return "Petrut"
+if Music
+string musicman = "SergioGay"
+musicman.substring(0,5)
+return musicman
+if AnotherWeirdProgrammer
+return "Bartus"
+if Handsome
+return "Rafael Carneros"
+public void ShoutUp()
+Debug.Log("Shout the fuc** up");
+public void Exit()
+Debug.Log("Congratulations")
+using UnityEngine;
+using System.Collections;
+
+public class onclick : MonoBehaviour {
+
+// Use this for initialization
+void Start () {
+GetComponent<UIEventListener>().onClick += hola;
+}
+
+void hola(GameObject target)
+{
+Debug.Log("HOLA");
+}
