@@ -33,8 +33,8 @@ public class PlayingState : FSM.State {
 	private float nAnnoyers;
 	private float maxNoise;
 
-	private float concentrationPercent = 0.5f;
-	private float powerUpPercent = 0.5f;
+	private float concentrationPercent = 1.0f;
+	private float powerUpPercent = 0.0f;
 	
 	private void Log(string _log) {
 #if DEBUG_LOG
@@ -43,7 +43,7 @@ public class PlayingState : FSM.State {
 	}
 
 	public override void Enter () {
-		concentrationPercent = 0.5f;
+		concentrationPercent = 1.0f;
 		powerUpPercent = 0.0f;
 
 		accumTick = tickTime;
