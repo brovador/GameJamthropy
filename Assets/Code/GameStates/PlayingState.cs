@@ -24,6 +24,7 @@ public class PlayingState : FSM.State {
 
 	public MusicManager musicManager;
 
+	public GameJamHallBlender gameJamHallBlender;
 
 
 	private float tickTime = 10.0f;
@@ -110,6 +111,8 @@ public class PlayingState : FSM.State {
 			fsm.ChangeState(fsm.GetComponent< Game >().gameOverState);
 		}
 		concentrationSlider.value = concentrationPercent;
+		gameJamHallBlender.blend = (1.0f - concentrationPercent);
+
 		powerUpSlider.value = powerUpPercent;
 
 		if(powerUpSlider.value >= 1)
