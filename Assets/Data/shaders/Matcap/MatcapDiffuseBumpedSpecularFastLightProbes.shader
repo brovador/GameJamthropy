@@ -70,7 +70,7 @@ Shader "Bravo/MatCap/MatCap Diffuse Bumped Specular Fast Lightprobes" {
 					matcapLookup.a = 1;
 					
 					fixed4 c;
-					c.rgb = i.vlight;
+					c = (i.vlight, 1.0);
 					
 					return (mainTextColor + matcapLookup * _RimLightIntensity * mainTextColor.a) * c;
 				}

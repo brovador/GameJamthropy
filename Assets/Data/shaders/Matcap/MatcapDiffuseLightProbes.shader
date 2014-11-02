@@ -27,7 +27,7 @@ Shader "Bravo/MatCap/MatCap Diffuse LightProbes" {
 					half2	uv : TEXCOORD0;
 					half3	TtoV0 : TEXCOORD1;
 					half3	TtoV1 : TEXCOORD2;
-					half3 	n;
+					half3 	n : NORMAL;
 					
 					fixed3 	vlight : TEXCOORD3;
 				};
@@ -64,7 +64,7 @@ Shader "Bravo/MatCap/MatCap Diffuse LightProbes" {
 					fixed4 mainTextColor = tex2D(_MainTex,i.uv);
 					
 					fixed4 c;
-					c.rgb = i.vlight;
+					c = (i.vlight, 1.0);
 					return (mainTextColor + matcapLookup * _RimLightIntensity) * c;
 				}
 			ENDCG
