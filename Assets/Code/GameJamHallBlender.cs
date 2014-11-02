@@ -16,6 +16,7 @@ public class GameJamHallBlender : MonoBehaviour {
 		if(blend != previousBlend) {
 			foreach(Material m in materials) {
 				m.SetFloat("_Blend", blend);
+				m.SetFloat("_LightIntensity", Mathf.Lerp(2.0f, 6.0f, blend));
 			}
 
 			previousBlend = blend;

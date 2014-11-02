@@ -8,7 +8,7 @@ public class GameOverState : FSM.State {
 	}
 
 	public override void Execute () {
-		if(Input.anyKeyDown) {
+		if(Input.GetKeyDown(KeyCode.Return)) {
 			fsm.ChangeState(fsm.GetComponent< Game >().mainMenuState);
 		}
 	}
