@@ -31,7 +31,7 @@ Shader "Bravo/MatCap/MatCap Diffuse Mask Transparency Cutout" {
 					half2	uv : TEXCOORD0;
 					half3	TtoV0 : TEXCOORD1;
 					half3	TtoV1 : TEXCOORD2;
-					half3 	n : NORMAL;
+					half3 	n : TEXCOORD3;
 				};
 				
 				v2f vert (appdata_tan v)

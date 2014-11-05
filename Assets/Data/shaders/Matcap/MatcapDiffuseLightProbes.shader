@@ -27,9 +27,9 @@ Shader "Bravo/MatCap/MatCap Diffuse LightProbes" {
 					half2	uv : TEXCOORD0;
 					half3	TtoV0 : TEXCOORD1;
 					half3	TtoV1 : TEXCOORD2;
-					half3 	n : NORMAL;
+					half3 	n : TEXCOORD3;
 					
-					fixed3 	vlight : TEXCOORD3;
+					fixed3 	vlight : TEXCOORD4;
 				};
 				
 				v2f vert (appdata_tan v)
