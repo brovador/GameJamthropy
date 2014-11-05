@@ -12,6 +12,8 @@ public class TypeWriter : MonoBehaviour {
 	
 	public AudioClip	typeWrong;
 	public AudioClip	typeRight;
+
+	public UILabel wordsCountLabel;
 	
 	private string 		originalText;
 	private string 		charToWrite;
@@ -19,6 +21,8 @@ public class TypeWriter : MonoBehaviour {
 	private string 		originalPhrase ;
 	private string[] 	aLine;
 	private int 		countLine;
+
+	private int nWords;
 	
 	void Start () 
 	{
@@ -28,6 +32,9 @@ public class TypeWriter : MonoBehaviour {
 		lblBackText.supportEncoding = true;
 		lblFrontText.supportEncoding = true;
 		GivePhrase(aLine, countLine);
+
+		nWords = 0;
+		wordsCountLabel.text = "" + 0;
 	}
 	
 	// Update is called once per frame
@@ -39,6 +46,9 @@ public class TypeWriter : MonoBehaviour {
 			if(Input.inputString.ToLower() == charToWrite.ToLower())
 			{
 				SoundManager.Instance.Play2DSound(typeRight);
+
+				wordsCountLabel.text = "" + (++ nWords);
+
 				
 				//Put the char in the front text
 				lblFrontText.text += charToWrite;
