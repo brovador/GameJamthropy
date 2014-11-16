@@ -22,7 +22,8 @@ public class TypeWriter : MonoBehaviour {
 	private string[] 	aLine;
 	private int 		countLine;
 
-	private int nWords;
+	//private int nWords;
+	public int nWords {get; private set;}
 	
 	void Start () 
 	{

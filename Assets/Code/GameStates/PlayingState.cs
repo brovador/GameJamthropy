@@ -66,6 +66,7 @@ public class PlayingState : FSM.State {
 	public override void Exit ()
 	{
 		enemyController.ShoutOutEveryone(false);
+		typeWriter.gameObject.SetActive(false);
 		typeWriter.OnInputRight -= OnInputRight;
 		typeWriter.OnInputWrong -= OnInputWrong;
 		enemyController.OnNoiseEnemyShouted -= OnEnemyShouted; 
@@ -108,7 +109,7 @@ public class PlayingState : FSM.State {
 		concentrationPercent -= (decreaseSpeed + decreaseSpeed * enemyController.overallNoiseLevel * noiseMultiplier) * Time.deltaTime;
 		if(concentrationPercent < 0.0f) {
 			concentrationPercent = 0.0f;
-			fsm.ChangeState(fsm.GetComponent< Game >().gameOverState);
+			fsm.ChangeState(fsm.GetComponent< Game >().enterHighscore);
 		}
 		concentrationSlider.value = concentrationPercent;
 		gameJamHallBlender.blend = (1.0f - concentrationPercent);
