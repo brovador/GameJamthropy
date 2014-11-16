@@ -29,7 +29,7 @@ public class EnterHIghscore : FSM.State {
 	}
 
 	void SubmitHighscore(string _username) {
-		userEntered = _username;
+		userEntered = _username == "" ? GJAPI.User.Name : _username;
 		node.gameObject.SetActive(false);
 		GameJolt.AddScore(_username, typeWriter.nWords, 
 			() => {

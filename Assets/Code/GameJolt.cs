@@ -14,7 +14,7 @@ public class GameJolt : MonoBehaviour {
 		GJAPI.Init(_gameID, _privateKey);
 
 #if UNITY_EDITOR
-		string _user = ""; //"Zalo";
+		string _user = "Zalo";
 		string _token = "da085b";
 #else
 		GJAPIHelper.Users.GetFromWeb(
