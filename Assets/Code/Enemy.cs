@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour {
 	}
 
 	private void ChangeAnimation(string _animName) {
-		animation.CrossFade(_animName);
-		animationState = animation[_animName];
+		GetComponent<Animation>().CrossFade(_animName);
+		animationState = GetComponent<Animation>()[_animName];
 		animationState.time = 0.0f;
 	}
 

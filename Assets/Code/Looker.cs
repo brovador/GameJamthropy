@@ -56,7 +56,7 @@ public class Looker : MonoBehaviour {
 	{
 		myNavMeshAgent = this.GetComponent<NavMeshAgent> ();
 		myTransform = transform;
-		myRenderer = renderer;
+		myRenderer = GetComponent<Renderer>();
 	}
 
 

@@ -3,8 +3,6 @@ using System.Collections;
 
 [System.Serializable]
 public class MainMenuState : FSM.State {
-
-	public CameraPathAnimator cameraPath;
 	public GameObject typeWriter;
 
 	public CameraManager cameraManager;
@@ -33,12 +31,6 @@ public class MainMenuState : FSM.State {
 			} else {
 				fsm.ChangeState(fsm.GetComponent< Game >().playingState);
 			}
-
-
-			//cameraPath.Play();
-			//cameraPath.AnimationFinishedEvent += HandleAnimationFinishedEvent;
-
-
 		}
 	}
 }

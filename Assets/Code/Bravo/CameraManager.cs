@@ -47,11 +47,11 @@ public class CameraManager : MonoBehaviour {
 		
 		pos0 = transform.localPosition;
 		rot0 = transform.localRotation; //It's important to keep the rotation in local coordinates to avoid a gimbal lock
-		fov0 = camera.fieldOfView;
-		viewport0 = camera.rect;
+		fov0 = GetComponent<Camera>().fieldOfView;
+		viewport0 = GetComponent<Camera>().rect;
 		
 		
-		camera.transparencySortMode = _target.transparencySortMode;
+		GetComponent<Camera>().transparencySortMode = _target.transparencySortMode;
 	}
 	
 	// Update is called once per frame
@@ -68,8 +68,8 @@ public class CameraManager : MonoBehaviour {
 				
 				transform.localPosition = Vector3.Lerp    (pos0, Vector3.zero, tSpring);
 				transform.localRotation = Quaternion.Slerp(rot0, Quaternion.identity, tSpring);
-				camera.fieldOfView  = Mathf.Lerp(fov0, target.fieldOfView, tSpring);
-				camera.rect = new Rect(
+				GetComponent<Camera>().fieldOfView  = Mathf.Lerp(fov0, target.fieldOfView, tSpring);
+				GetComponent<Camera>().rect = new Rect(
 					Mathf.Lerp(viewport0.x,      target.rect.x,      tSpring),
 					Mathf.Lerp(viewport0.y,      target.rect.y,      tSpring),
 					Mathf.Lerp(viewport0.width,  target.rect.width,  tSpring),
@@ -77,10 +77,10 @@ public class CameraManager : MonoBehaviour {
 				);
 			} else {
 				if(target.rect != previousRect) {
-					camera.rect = target.rect;
+					GetComponent<Camera>().rect = target.rect;
 					previousRect = target.rect;
 				}
-				camera.fieldOfView = target.fieldOfView;
+				GetComponent<Camera>().fieldOfView = target.fieldOfView;
 			}
 			
 		}
